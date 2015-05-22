@@ -1,0 +1,101 @@
+# prop for GetImage 
+
+
+# url for start to get
+Url=http://www.mmkao.com/shxcsy/index.html
+#Url=http://www.mmkao.com/shxcsy/201305/3206_7.html
+
+# encoding type : UTF-8 , GB2312
+#EncodeType=UTF-8
+EncodeType=GB18030
+
+# flag for test
+# 1: show image urls and html urls
+# 2: show html content , and contain 1 
+isTest=0
+
+# depth for get
+# >0: to get Depthes
+# -1: to get all
+Depth=100
+# save dir
+DirForJpg=./jpg/mmkao/shxcsy
+# save jpg in each dir named by title
+isSaveByTitle=1
+# Title separator , get foreside from title , last index 
+TitleSeparator=___
+# thread num to down load picture
+ThreadNum=10
+
+# operate for repeate html
+# 0: return if repeate
+# 1: get urls if repeate once on this runtime
+RepeateOperate=0
+
+# flag for cookie
+# 0: not use cookie ; 1: use cookie ; 2: to get cookie ; 3: use cookie include download image
+UseCookie=1
+# cookie string ; used if userCookie=1
+Cookie=lastfid=0;lastvisit=0%091325084900%09%2Flogin.php%3F;ck_info=%2F%09;winduser=Dw8FDQVaOFRUCVQOUFICAFdbW1MDBwBaBAcAXQEKBwFRDlBYXg8C;lastvisit=deleted;
+
+# url for get cookie ; used if UserCookie=2
+UrlForCookie=http://www.m6mm.com/login.php?
+# post string for get cookie ; used if UserCookie=2
+StrForCookie=pwuser=renhongbo777&pwpwd=19790930&hideid=0&cktime=31536000&jumpurl=http%3A%2F%2Fwww.m6mm2009.info%2Findex.php&step=2
+
+# Regex for get image url
+#RegForImage=(?x)src=('|")*((http://([\w-]+\.)+[\w-]+(:[0-9]+)*)*(/)*([\S]*+/)*([\S]*\.(jpg|JPG|jpeg|JPEG)))('|")*
+RegForImage=(?x)src=('|\")*(http://pic\\.mmkao\\.com/photo(/[0-9a-zA-Z\\-]*)*.jpg)('|\")*
+NumForImage=2
+# Regex for get hyperlink url
+RegForHtml=(?x)href=('|\")*(([0-9]*/)?[0-9]*(_[0-9]*)?.html)('|\")*
+NumForHtml=2
+# get hyperlink url flag
+# FlagForHtml=NULL : get all urls
+# FlagForHtml=(GetUrl=index)(GetUrl=list)(Compare=_)(Compare=.)(Include=index)(Include=list)(noGetUrl=tu)(noGetImg=list)(CompRegex=/[0-9]+/)
+#     GetUrl: get urls which url include set chars
+#     noGetUrl: not get urls which url include set chars
+#     GetImg: get image which url include set chars
+#     noGetImg: not get image url which url include set chars
+#     DownImg: get image which image url include set chars
+#     noDownImg: not get image url which image url include set chars
+#     Include: getImage from new url which old url include set chars
+#     Compare: getImage from new url which Compare old url before set char
+#     CompRegex: getImage from new url which Compare old url get by regex string
+#     noInclude: not getImage from new url which include set chars , if Include Compare CompRegex result true
+#     GetUrl noGetUrl used for isGetUrl() , and noGetUrl > GetUrl
+#     GetImg noGetImg used for isGetImg() , and noGetImg > GetImg
+#     Include Compare CompRegex noInclude used for isGetFromUrl() , and Include : Compare : CompRegex > noInclude
+#     noDownImg: not to down image which image url inclue set chars
+#     DownImg: to down image which image url inclue set chars , not to down image which not inclue set chars
+#     noDownImg DownImg only use one 
+FlagForHtml=NULL
+
+# modify imgurl to get img
+# imgUrlReplace=(OLD=/big/)(NEW=/pic/)(FALG=0)
+#     OLD: old url chars 
+#     NEW: new url chars
+#     FALG: 0- replace all ; 1-replace first
+imgUrlReplace=(OLD=/big/)(NEW=/pic/)(FALG=0)
+
+# set defualt postfix ; use if getimage file have no postfix
+DefPostfix=jpg
+
+# flag for filter html
+# 0: url list
+# 1: tid list (m6mm)
+filterflag=0
+# file name for record filter
+filterFile=./mmkao1.log
+# list of html which already got
+# filterflag=0 list for url , form is +URL-
+# filterflag=1 list for tid
+filterlist=FILTER:
+
+# list of pictrue which not to download , form is +picname-
+piclist=+gpic.jpg-+21ao.jpg-+iii.jpg-+luo.jpg-+haizei1024_3.jpg-+2a0gjyr.jpg-+th_e923ed88aab022bfa5c27245.jpg-+sampdc13a35fb563007c.jpg-+20081103083413_9877.jpg-+img201001232336579.jpg-+banner2.jpg-+3678027424_1e7d8845df_o.jpg-+6paws7.jpg-+image_4ec53fd3eeea4_small.jpg-+293087_n.jpg-+97b523c27fa758ffeaddd0f06de06a9a.jpg-+8998681bgw1dnpefmmrfzj.jpg-+10089222.jpg-
+
+# Regex string for get tid ; used when filtflag=1
+RegForList=(?x)href='sendemail.php\?action=tofriend\&tid=([0-9]*)'
+NumForList=1
+

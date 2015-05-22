@@ -1,0 +1,65 @@
+# prop for GetImage
+
+# url for start to get
+Url=http://www.mm.net/star/liuyan/27/5368_1.html
+Url=http://www.mm.net/star/neidi/index.html
+
+# encoding type : UTF-8 , GB2312
+EncodeType=UTF-8
+#EncodeType=GB18030
+
+# flag for test
+# 1: test version
+isTest=0
+
+# depth for get
+Depth=100
+# save dir
+DirForJpg=./jpg/mm/star
+# save jpg in each dir named by title
+isSaveByTitle=1
+TitleSeparator=_
+ThreadNum=10
+# flag for cookie
+# 0: not use cookie ; 1: use cookie ; 2: to get cookie 
+UseCookie=0
+# cookie string ; used if userCookie=1
+#Cookie=lastfid=0;lastvisit=0%091279694315%09%2Flogin.php%3F;ck_info=%2F%09;winduser=Dw8FDQVaOFRUCVQOUFICAFdbW1MDBwBaBAcAXQEKBwFRDlBYXg8C;lastvisit=deleted;
+Cookie=lastfid=0;lastvisit=0%091325084900%09%2Flogin.php%3F;ck_info=%2F%09;winduser=Dw8FDQVaOFRUCVQOUFICAFdbW1MDBwBaBAcAXQEKBwFRDlBYXg8C;lastvisit=deleted;
+
+# url for get cookie ; used if UserCookie=2
+UrlForCookie=http://www.m6mm.com/login.php?
+# post string for get cookie ; used if UserCookie=2
+StrForCookie=pwuser=renhongbo777&pwpwd=19790930&hideid=0&cktime=31536000&jumpurl=http%3A%2F%2Fwww.m6mm2009.info%2Findex.php&step=2
+
+# Regex for get image url
+#RegForImage=(?x)src=('|\")*((http://([\\w-]+\\.)+[\\w-]+(:[0-9]+)*)*(/)*([\\S]*+/)*([\\S]*\\.(jpg|JPG|jpeg|JPEG)))('|\")*
+RegForImage=(?x)src=('|\")*(((http://([a-zA-Z0-9]*)\\.mm\\.(cn|net|com))?/flashAll/[\\S]*)*\\.(jpg|JPG))
+NumForImage=2
+# Regex for get hyperlink url
+RegForHtml=(?x)href=('|\")*(((http://([a-zA-Z0-9]*)\\.mm\\.(cn|net|com))?/star/[\\S]*)*\\.html)('|\")*
+NumForHtml=2
+# get hyperlink url flag
+# FlagForHtml=NULL : to get url in every page
+# FlagForHtml=index : to get url in pages which url include 'index'
+FlagForHtml=
+
+
+# flag for filter html
+# 0: url list
+# 1: tid list (m6mm)
+filterflag=0
+# file name for record filter
+filterFile=./mm.log
+# list of html which already got
+# filterflag=0 list for url , form is +URL-
+# filterflag=1 list for tid
+filterlist=FILTER:
+
+# list of pictrue which not to download
+piclist=gpic.jpg21ao.jpgiii.jpgluo.jpghaizei1024_3.jpg2a0gjyr.jpgth_e923ed88aab022bfa5c27245.jpgsampdc13a35fb563007c.jpg20081103083413_9877.jpgimg201001232336579.jpgbanner2.jpg3678027424_1e7d8845df_o.jpg6paws7.jpgimage_4ec53fd3eeea4_small.jpg293087_n.jpg97b523c27fa758ffeaddd0f06de06a9a.jpg
+
+# Regex string for get tid ; used when filtflag=1
+RegForList=(?x)href='sendemail.php\\?action=tofriend\\&tid=([0-9]*)'
+NumForList=1
+

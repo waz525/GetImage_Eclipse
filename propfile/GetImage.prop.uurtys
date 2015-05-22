@@ -1,0 +1,81 @@
+# prop for GetImage
+
+# url for start to get
+Url=http://www.uurtys.com/rtyssy/index.html
+Url=http://www.uurtys.com/rtyssy/1945.html
+Url=http://www.uurtys.com/rtyssy/1945_5.htm
+
+
+
+# encoding type : UTF-8 , GB2312
+#EncodeType=UTF-8
+EncodeType=GB18030
+
+# flag for test
+# 1: test version
+isTest=2
+
+# depth for get
+Depth=100
+# save dir
+DirForJpg=./jpg/uurtys/rtyssy/
+# save jpg in each dir named by title
+isSaveByTitle=1
+TitleSeparator=_-(
+ThreadNum=10
+# flag for cookie
+# 0: not use cookie ; 1: use cookie ; 2: to get cookie 
+UseCookie=0
+# cookie string ; used if userCookie=1
+#Cookie=lastfid=0;lastvisit=0%091279694315%09%2Flogin.php%3F;ck_info=%2F%09;winduser=Dw8FDQVaOFRUCVQOUFICAFdbW1MDBwBaBAcAXQEKBwFRDlBYXg8C;lastvisit=deleted;
+#Cookie=lastfid=0;lastvisit=0%091325084900%09%2Flogin.php%3F;ck_info=%2F%09;winduser=Dw8FDQVaOFRUCVQOUFICAFdbW1MDBwBaBAcAXQEKBwFRDlBYXg8C;lastvisit=deleted;
+Cookie=BAIDU_CLB_REFER=http%3A%2F%2Fwww.baidu.com%2Fs%3Fwd%3D%25C3%25C0%25C5%25AE%25CD%25BC%25C6%25AC%26rsv_bp%3D0%26rsv_spt%3D3%26inputT%3D3610
+
+# url for get cookie ; used if UserCookie=2
+#UrlForCookie=http://www.m6mm.com/login.php?
+UrlForCookie=http://www.meinv.com/star/huangshengyi/37/7371_10.html
+# post string for get cookie ; used if UserCookie=2
+#StrForCookie=pwuser=renhongbo777&pwpwd=19790930&hideid=0&cktime=31536000&jumpurl=http%3A%2F%2Fwww.m6mm2009.info%2Findex.php&step=2
+StrForCookie=\ 
+# Regex for get image url
+#RegForImage=(?x)src=('|\")*((http://([\\w-]+\\.)+[\\w-]+(:[0-9]+)*)*(/)*([\\S]*+/)*([\\S]*\\.(jpg|JPG|jpeg|JPEG)))('|\")*
+RegForImage=(?x)src=('|\")*((http://([a-zA-Z0-9]*\\.)+(uurtys|yybo)\\.(cn|net|com)(:[0-9]+)*)?(/uurtys)?/UploadFiles/[\\S]*\\.(jpg|JPG))
+NumForImage=2
+# Regex for get hyperlink url
+RegForHtml=(?x)href=('|\")*(((http://www\\.uurtys\\.com)?/rtyssy/[\\S]*\\.htm)|([0-9]*\\.htm)|(index(-[0-9]+)*\\.htm))('|\")*
+NumForHtml=2
+# get hyperlink url flag
+# FlagForHtml=NULL : get all urls
+# FlagForHtml=(GetUrl=index)(GetUrl=list)(Compare=_)(Compare=.)(Include=index)(Include=list)(noGetUrl=tu)(noGetImg=list)
+#     GetUrl: get urls which url include set chars
+#     noGetUrl: not get urls which url include set chars
+#     GetImg: get image which url include set chars
+#     noGetImg: not get image url which url include set chars
+#     Include: getImage from new url which old url include set chars
+#     Compare; getImage from new url which Compare old url before set char
+#     GetUrl noGetUrl used for isGetUrl() , and noGetUrl > GetUrl
+#     GetImg noGetImg used for isGetImg() , and noGetImg > GetImg
+#     Include Compare used for isGetFromUrl() , and Include : Compare
+#FlagForHtml=(Compare=/)(Include=list)(noGetImg=list)
+FlagForHtml=(Compare=.)(Compare=_)(Include=index)(noGetImg=index)
+
+
+# flag for filter html
+# 0: url list
+# 1: tid list (m6mm)
+filterflag=0
+# file name for record filter
+filterFile=./uurtys_u.log
+# list of html which already got
+# filterflag=0 list for url , form is +URL-
+# filterflag=1 list for tid
+filterlist=FILTER:
+
+# list of pictrue which not to download
+#piclist=gpic.jpg21ao.jpgiii.jpgluo.jpghaizei1024_3.jpg2a0gjyr.jpgth_e923ed88aab022bfa5c27245.jpgsampdc13a35fb563007c.jpg20081103083413_9877.jpgimg201001232336579.jpgbanner2.jpg3678027424_1e7d8845df_o.jpg6paws7.jpgimage_4ec53fd3eeea4_small.jpg293087_n.jpg97b523c27fa758ffeaddd0f06de06a9a.jpg
+piclist=+20121167587310152.jpg-+20121169798724306.jpg-+20121164673346921.jpg-+20121160818708838.jpg-+20121163401738862.jpg-+20121167247454586.jpg-+20121164579653791.jpg-+20121169287485791.jpg-+201112207277886323.jpg-+201112200273456953.jpg-+201112201660357786.jpg-+201112202812033529.jpg-+201112201266462022.jpg-+201112202457871675.jpg-+20121167727081550.jpg-+20121161720335980.jpg-+20121165990218636.jpg-+20121167531432297.jpg-
+
+# Regex string for get tid ; used when filtflag=1
+RegForList=(?x)href='sendemail.php\\?action=tofriend\\&tid=([0-9]*)'
+NumForList=1
+

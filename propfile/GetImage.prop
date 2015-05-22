@@ -1,0 +1,78 @@
+# prop for GetImage
+
+# url for start to get
+Url=http://www.m6mm.com/read.php?tid=1357222
+Url=http://www.m6mm.com/thread.php?fid=51
+# encoding type : UTF-8 , GB2312
+#EncodeType=UTF-8
+EncodeType=GB18030
+
+# flag for test
+# 1: test version
+isTest=0
+
+RepeateOperate=0
+
+# depth for get
+# >0: to get Depthes
+# -1: to get all
+Depth=100
+# save dir
+DirForJpg=./jpg/m6mm/zhipai
+# save jpg in each dir named by title
+isSaveByTitle=1
+# Title separator , get foreside from title
+TitleSeparator=P[
+# thread num to down load picture
+ThreadNum=5
+
+# flag for cookie
+# 0: not use cookie ; 1: use cookie ; 2: to get cookie 
+UseCookie=2
+# cookie string ; used if userCookie=1
+Cookie=lastfid=0;lastvisit=0%091384507173%09%2Flogin.php%3F;ck_info=%2F%09;winduser=UARSCFZUMFZRAVUCVQAFDgAGVwJQDlRQWAAHVVIABgQCXgRbU1cD;lastvisit=deleted;
+
+# url for get cookie ; used if UserCookie=2
+UrlForCookie=http://www.m6co.com/login.php?
+# post string for get cookie ; used if UserCookie=2
+StrForCookie=pwuser=eastlang&pwpwd=198581&hideid=0&cktime=31536000&jumpurl=http%3A%2F%2Fwww.m6mm.com%2Findex.php&step=2
+StrForCookie=pwuser=velna_007&pwpwd=3462291&hideid=0&cktime=31536000&jumpurl=http%3A%2F%2Fwww.m6mm.com%2Findex.php&step=2
+#StrForCookie=pwuser=renhongbo777&pwpwd=19790930&hideid=0&cktime=31536000&jumpurl=http%3A%2F%2Fwww.m6mm.com%2Findex.php&step=2
+
+# Regex for get image url
+RegForImage=(?x)src=('|\")*((http://([\\w-]+\\.)+[\\w-]+(:[0-9]+)*)*(/)*([\\S]*+/)*([\\S]*\\.(jpg|JPG|jpeg|JPEG)))('|\")*
+NumForImage=2
+# Regex for get hyperlink url
+RegForHtml=(?x)href='((job.php\\?rd_previous=[0-9]*\\&fid=[0-9]*\\&tid=[0-9]*\\&fpage=\\&goto=(previous|next))|(read.php\\?tid=[0-9]{7}(\\&fpage=[0-9]*)?))'
+#RegForHtml=(?x)href='(job.php\\?rd_previous=[0-9]*\\&fid=[0-9]*\\&tid=[0-9]*\\&fpage=\\&goto=(previous|next))'
+NumForHtml=1
+# get hyperlink url flag
+# FlagForHtml=NULL : to get url in every page
+# FlagForHtml=index : to get url in pages which url include 'index' 
+FlagForHtml=NULL
+
+# flag for filter html
+# 0: url list 
+# 1: tid list (m6mm)
+filterflag=1
+# file name for record filter
+filterFile=./m6mmlist_zhipai.log
+# list of html which already got 
+# filterflag=0 list for url , form is +URL-
+# filterflag=1 list for tid 
+filterlist=FILTER:
+
+# list of pictrue which not to download 
+piclist=+gpic.jpg-+21ao.jpg-+iii.jpg-+luo.jpg-+haizei1024_3.jpg-+2a0gjyr.jpg-+th_e923ed88aab022bfa5c27245.jpg-+sampdc13a35fb563007c.jpg-+20081103083413_9877.jpg-+img201001232336579.jpg-+banner2.jpg-+3678027424_1e7d8845df_o.jpg-+6paws7.jpg-+image_4ec53fd3eeea4_small.jpg-+293087_n.jpg-+97b523c27fa758ffeaddd0f06de06a9a.jpg-+8998681bgw1dnpefmmrfzj.jpg-+10089222.jpg-+claire_sinclair_21.jpg-
+
+# Regex string for get tid ; used when filtflag=1
+RegForList=(?x)href='sendemail.php\\?action=tofriend\\&tid=([0-9]*)'
+NumForList=1
+
+Url=http://www.m6mm.com/thread.php?fid=116&page=1
+isWriteThreadLog=0
+isTest=0
+Depth=50
+ThreadNum=7
+DirForJpg=./jpg/m6mm/xingshou
+filterFile=./m6mmlist_xingshou.log
