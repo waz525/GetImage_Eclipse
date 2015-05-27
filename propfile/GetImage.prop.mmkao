@@ -2,8 +2,7 @@
 
 
 # url for start to get
-Url=http://www.mmkao.com/paimei/index.html
-#Url=http://www.mmkao.com/paimei/201305/3206_7.html
+Url=http://www.mmkao.com/ShowTimeDancer/index.html
 
 # encoding type : UTF-8 , GB2312
 #EncodeType=UTF-8
@@ -19,7 +18,7 @@ isTest=0
 # -1: to get all
 Depth=100
 # save dir
-DirForJpg=./jpg/mmkao/paimei
+DirForJpg=f:/jpg/mmkao/ShowTimeDancer
 # save jpg in each dir named by title
 isSaveByTitle=1
 # Title separator , get foreside from title , last index 
@@ -45,7 +44,7 @@ StrForCookie=pwuser=renhongbo777&pwpwd=19790930&hideid=0&cktime=31536000&jumpurl
 
 # Regex for get image url
 #RegForImage=(?x)src=('|")*((http://([\w-]+\.)+[\w-]+(:[0-9]+)*)*(/)*([\S]*+/)*([\S]*\.(jpg|JPG|jpeg|JPEG)))('|")*
-RegForImage=(?x)src=('|\")*(http://pic\\.mmkao\\.com/photo(/[0-9a-zA-Z\\-]*)*.jpg)('|\")*
+RegForImage=(?x)src=('|\")*(http://[0-9a-zA-Z]*\\.mmkao\\.net/photo(/[0-9a-zA-Z\\-]*)*.jpg)('|\")*
 NumForImage=2
 # Regex for get hyperlink url
 RegForHtml=(?x)href=('|\")*(([0-9]*/)?[0-9]*(_[0-9]*)?.html)('|\")*

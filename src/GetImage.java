@@ -19,7 +19,7 @@ public class GetImage implements GetImageMBean,Runnable
 	
 	private String Url = "" ;
 	private String filterlist = "+-"  ;
-	private String filterfile = ""  ;
+	private String filterFile = ""  ;
 	private String piclist = "" ;
 	private String Cookie = "" ;
 	private String RegForImage = "(?x)src=('|\")*((http://([\\w-]+\\.)+[\\w-]+(:[0-9]+)*)*(/)*([\\S]*+/)*([\\S]*\\.(jpg|JPG|jpeg|JPEG)))('|\")*" ;
@@ -50,6 +50,7 @@ public class GetImage implements GetImageMBean,Runnable
 		this.CurrentDepth = depth ;
 		System.out.println( " Depth "+depth+" : "+url );
 		int flagForImg = 1 ;
+		String FilePrefix = ""+((new java.util.Date()).getTime()/1000);
 		if( filterflag == 0 )
 		{
 			if( AllFilterList.indexOf("+"+url+"-") != -1 )
@@ -106,7 +107,7 @@ public class GetImage implements GetImageMBean,Runnable
 				}
 				if( flagForImg == 1 ) AllFilterList+=tid[0] ;
 				htmlname = tid[0] ;
-				if( flagForImg == 1 && isTest == 0 ) Log.writeString( this.filterfile , htmlname ) ;
+				if( flagForImg == 1 && isTest == 0 ) Log.writeString( this.filterFile , htmlname ) ;
 			}
 			else
 			{
@@ -116,7 +117,7 @@ public class GetImage implements GetImageMBean,Runnable
 		}
 		else
 		{
-			if( flagForImg == 1 && isTest == 0 ) Log.writeString( this.filterfile , "+"+url+"-" ) ;
+			if( flagForImg == 1 && isTest == 0 ) Log.writeString( this.filterFile , "+"+url+"-" ) ;
 		}
 
 		if( flagForImg == 1 )
@@ -186,7 +187,7 @@ public class GetImage implements GetImageMBean,Runnable
 				imgUrl = DealUrl(imgUrl) ;
 				filename = DealFilename( filename ) ;
 				
-				String downFile = ""  ;
+				String downFile = ""+FilePrefix  ;
 				if( downFile.lastIndexOf('?') > 0 ) downFile=downFile.substring(downFile.lastIndexOf('?')+1) ;
 				if( downFile.lastIndexOf('=') > 0 ) downFile=downFile.substring(downFile.lastIndexOf('=')+1) ;
 				downFile += (i>9)?((i>99)?(""+i):("0"+i)):("00"+i) ;
@@ -362,9 +363,9 @@ public class GetImage implements GetImageMBean,Runnable
 		temp = prop.getProperty("RepeateOperate") ;
 		if(  temp == null || temp.length() == 0 ) {System.out.println( "Info: Property RepeateOperate is null , use RepeateOperate=0 ...") ; temp="0" ;}
 		this.RepeateOperate = Integer.parseInt(temp) ;
-		temp = prop.getProperty("filterfile") ;
-		if(  temp == null || temp.length() == 0 ) {System.out.println( "Info: Property filterfile is null , use filterfile=./GetImage.log ...") ; temp="./GetImage.log" ;}
-		this.filterfile = temp ;
+		temp = prop.getProperty("filterFile") ;
+		if(  temp == null || temp.length() == 0 ) {System.out.println( "Info: Property filterFile is null , use filterFile=./GetImage.log ...") ; temp="./GetImage.log" ;}
+		this.filterFile = temp ;
 		temp = prop.getProperty("piclist") ;
 		if(  temp == null || temp.length() == 0 ) {System.out.println( "Info: Property piclist is null , use piclist= ...") ; temp="" ;}
 		this.piclist = temp ;
@@ -436,9 +437,9 @@ public class GetImage implements GetImageMBean,Runnable
 		if( this.ThreadNum < 1 ) this.ThreadNum = 5 ;
 		
 		this.AllFilterList = this.filterlist ;
-		if( Log.isFile(this.filterfile) )
+		if( Log.isFile(this.filterFile) )
 		{
-			this.AllFilterList += Log.readString( this.filterfile ) ;
+			this.AllFilterList += Log.readString( this.filterFile ) ;
 		}
 		
 		return "[INFO] LOAD "+fileName+" SUCCESS !";
@@ -831,7 +832,7 @@ public class GetImage implements GetImageMBean,Runnable
 		content += "# 1: tid list (m6mm)\n" ;
 		content += "filterflag="+filterflag+"\n" ;
 		content += "# file name for record filter\n" ;
-		content += "filterfile="+filterfile+"\n" ;
+		content += "filterFile="+filterFile+"\n" ;
 		content += "# list of html which already got\n" ;
 		content += "# filterflag=0 list for url , form is +URL-\n" ;
 		content += "# filterflag=1 list for tid\n" ;
@@ -937,7 +938,7 @@ public class GetImage implements GetImageMBean,Runnable
 		content += "# 1: tid list (m6mm)<br>\n" ;
 		content += "filterflag="+filterflag+"<br>\n" ;
 		content += "# file name for record filter<br>\n" ;
-		content += "filterfile="+filterfile+"<br>\n" ;
+		content += "filterFile="+filterFile+"<br>\n" ;
 		content += "# list of html which already got<br>\n" ;
 		content += "# filterflag=0 list for url , form is +URL-<br>\n" ;
 		content += "# filterflag=1 list for tid<br>\n" ;
@@ -1041,7 +1042,7 @@ public class GetImage implements GetImageMBean,Runnable
 		content += "# 1: tid list (m6mm)\n" ;
 		content += "filterflag=0\n" ;
 		content += "# file name for record filter\n" ;
-		content += "filterfile=./m6mmlist.log\n" ;
+		content += "filterFile=./m6mmlist.log\n" ;
 		content += "# list of html which already got\n" ;
 		content += "# filterflag=0 list for url , form is +URL-\n" ;
 		content += "# filterflag=1 list for tid\n" ;
@@ -1078,9 +1079,9 @@ public class GetImage implements GetImageMBean,Runnable
 	public String reloadAllFilterList()
 	{
 		this.AllFilterList = this.filterlist ;
-		if( Log.isFile(this.filterfile) )
+		if( Log.isFile(this.filterFile) )
 		{
-			this.AllFilterList += Log.readString( this.filterfile ) ;
+			this.AllFilterList += Log.readString( this.filterFile ) ;
 		}
 		return showAllFilterList() ;
 	}
@@ -1306,12 +1307,12 @@ public class GetImage implements GetImageMBean,Runnable
 
 	public String getfilterfile()
 	{
-		return this.filterfile ;
+		return this.filterFile ;
 	}
 	
 	public synchronized void setfilterfile(String filename)
 	{
-		this.filterfile = filename ;
+		this.filterFile = filename ;
 	}
 	
 	public synchronized String getpiclist()
@@ -1326,7 +1327,7 @@ public class GetImage implements GetImageMBean,Runnable
 
 
 	public String emptyAllFilterList() {
-		Log.removeFile(this.filterfile);
+		Log.removeFile(this.filterFile);
 		this.AllFilterList = "AllFilterList:" ;
 		return "["+this.AllFilterList+"]" ;
 	}

@@ -14,7 +14,7 @@ EncodeType=GB18030
 #isTest=1
 
 # depth for get
-Depth=100
+Depth=20
 # save dir
 DirForJpg=./jpg/mmonly/photo/
 # save jpg in each dir named by title
@@ -41,7 +41,7 @@ RegForImage=(?x)src=('|\")*((http://[\\w-]+\\.mmonly\\.com)?/mmonly(/[\\S]*)*/[0
 NumForImage=2
 # Regex for get hyperlink url
 #RegForHtml=(?x)href=('|\")*((/mm/qingliang/[\\S]*\\.html)|([0-9a-zA-Z\-_$]*\\.html)|(index(_[0-9]+)*\\.html))('|\")*
-RegForHtml=(?x)href=('|\")*(((http://mmonly\\.com)?/photo/[\\S]*\\.html)|([0-9a-zA-Z\-_$]*\\.html))('|\")*
+RegForHtml=(?x)href=('|\")*((http://([\\w-]+\\.)+mmonly\\.com/photo/[\\S]*\\.html)|(list_[0-9]*\\.html))('|\")*
 NumForHtml=2
 # get hyperlink url flag
 # FlagForHtml=NULL : get all urls

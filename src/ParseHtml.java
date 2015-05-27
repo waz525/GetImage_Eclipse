@@ -22,6 +22,10 @@ public class ParseHtml {
 	    //connection.setRequestProperty("Accept-Language" , "zh-cn") ;
 	    //connection.setRequestProperty("Accept-Encoding" , "gzip, deflate") ;
             connection.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)");
+            
+            connection.setConnectTimeout(60000);
+            connection.setReadTimeout(180000);
+            
             connection.connect();
             //InputStreamReader isr = new InputStreamReader(connection.getInputStream());   
             //BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(),"GB2312"));
@@ -49,6 +53,9 @@ public class ParseHtml {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestProperty("Cookie",cookies);
+            connection.setConnectTimeout(60000);
+            connection.setReadTimeout(180000);
+            
             connection.connect(); 
 	    
             InputStreamReader isr = new InputStreamReader(connection.getInputStream(),encodeType);   
@@ -91,6 +98,9 @@ public class ParseHtml {
                         sessionId = sessionId+cookieVal+";";
                     }
             }
+            conn.setConnectTimeout(60000);
+            conn.setReadTimeout(180000);
+            
             conn.connect(); 
             InputStream ins = conn.getInputStream();   
 	}
