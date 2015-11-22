@@ -97,21 +97,21 @@ public class GetImage implements GetImageMBean,Runnable
 			String[] tid = ph.getUrlByReg( RegForList , NumForList ) ;
 			if( tid.length > 0 )
 			{
-				if( AllFilterList.indexOf(tid[0]) != -1 )
+				if( AllFilterList.indexOf("+"+tid[0]+"-") != -1 )
 				{
 					System.out.println( "   >>> TID "+tid[0]+" repeated !!!");
 					if( RepeateOperate == 0 ) return  ;
-					if( repeateUrl.indexOf(tid[0]) != -1 ) return ;
+					if( repeateUrl.indexOf("+"+tid[0]+"-") != -1 ) return ;
 					flagForImg = 0 ;
-					repeateUrl += tid[0] ;
+					repeateUrl += "+"+tid[0]+"-" ;
 				}
-				if( flagForImg == 1 ) AllFilterList+=tid[0] ;
-				htmlname = tid[0] ;
-				if( flagForImg == 1 && isTest == 0 ) Log.writeString( this.filterFile , htmlname ) ;
+				if( flagForImg == 1 ) AllFilterList+="+"+tid[0]+"-" ;
+				htmlname = tid[0];
+				if( flagForImg == 1 && isTest == 0 ) Log.writeString( this.filterFile ,  "+"+tid[0]+"-" ) ;
 			}
 			else
 			{
-				htmlname = "fid=51" ;
+				htmlname = "tid=NULL" ;
 			}
 		
 		}
@@ -187,7 +187,7 @@ public class GetImage implements GetImageMBean,Runnable
 				imgUrl = DealUrl(imgUrl) ;
 				filename = DealFilename( filename ) ;
 				
-				String downFile = ""+FilePrefix  ;
+				String downFile = ""+FilePrefix+"_"  ;
 				if( downFile.lastIndexOf('?') > 0 ) downFile=downFile.substring(downFile.lastIndexOf('?')+1) ;
 				if( downFile.lastIndexOf('=') > 0 ) downFile=downFile.substring(downFile.lastIndexOf('=')+1) ;
 				downFile += (i>9)?((i>99)?(""+i):("0"+i)):("00"+i) ;
