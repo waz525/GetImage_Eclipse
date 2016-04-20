@@ -1,89 +1,86 @@
 
 public interface GetImageMBean
 {
+	public String  get01_Url() ;
+	public void set01_Url(String  value) ;
 
-	public String getfilterlist() ;
-	public void setfilterlist(String list) ;
+	public String get02_EncodeType() ;
+	public void set02_EncodeType(String str) ;
+
+	public int  get03_isTest() ;
+	public void set03_isTest(int  value) ;
+
+	public int  get04_Depth() ;
+	public void set04_Depth(int  value) ;
+
+	public String get05_DirForJpg() ;
+	public void set05_DirForJpg(String str) ;
+
+	public int  get06_isSaveByTitle() ;
+	public void set06_isSaveByTitle(int  value) ;
+
+
+	public String get23_filterlist() ;
+	public void set23_filterlist(String list) ;
 	
-	public String getfilterfile() ;
-	public void setfilterfile(String filename) ;
+	public String get22_filterfile() ;
+	public void set22_filterfile(String filename) ;
 
-	public String getpiclist() ;
-	public void setpiclist(String picList) ;
+	public String get24_piclist() ;
+	public void set24_piclist(String picList) ;
 	
-	public String getCookie() ;
-	public void setCookie(String cookie) ;
+	public String get11_Cookie() ;
+	public void set11_Cookie(String cookie) ;
 	
-	public String getRegForImage() ;
-	public void setRegForImage(String reg) ;
+	public String get14_RegForImage() ;
+	public void set14_RegForImage(String reg) ;
 	
-	public String getRegForHtml() ;
-	public void setRegForHtml(String reg) ;
+	public String get16_RegForHtml() ;
+	public void set16_RegForHtml(String reg) ;
 	
-	public String getFlagForHtml() ;
-	public void setFlagForHtml(String str) ;
+	public String get18_FlagForHtml() ;
+	public void set18_FlagForHtml(String str) ;
 
-	public String getDirForJpg() ;
-	public void setDirForJpg(String str) ;
+	public String get12_UrlForCookie() ;
+	public void set12_UrlForCookie(String str) ;
 
-	public String getEncodeType() ;
-	public void setEncodeType(String str) ;
-
-	public String getUrlForCookie() ;
-	public void setUrlForCookie(String str) ;
-
-	public String getStrForCookie() ;
-	public void setStrForCookie(String str) ;
+	public String get13_StrForCookie() ;
+	public void set13_StrForCookie(String str) ;
 	
-	public String getRegForList() ;
-	public void setRegForList(String str) ;
+	public String get25_RegForList() ;
+	public void set25_RegForList(String str) ;
 
-	public String getTitleSeparator() ;
-	public void setTitleSeparator(String str) ;
+	public String get07_TitleSeparator() ;
+	public void set07_TitleSeparator(String str) ;
 
-	public String getrepeateUrl() ;
-	public void setrepeateUrl(String str) ;
-
-	public String getimgUrlReplace() ;
-	public void setimgUrlReplace(String str) ;
+	public String get19_imgUrlReplace() ;
+	public void set19_imgUrlReplace(String str) ;
 	
-	public String getdefPostfix() ;
-	public void setdefPostfix(String str) ;
+	public String get20_defPostfix() ;
+	public void set20_defPostfix(String str) ;
 
-	public int  getNumForList() ;
-	public void setNumForList(int  value) ;
+	public int  get26_NumForList() ;
+	public void set26_NumForList(int  value) ;
 	
-	public int  getRepeateOperate() ;
-	public void setRepeateOperate(int  value) ;
+	public int  get09_RepeateOperate() ;
+	public void set09_RepeateOperate(int  value) ;
 
-	public int  getNumForImage() ;
-	public void setNumForImage(int  value) ;
+	public int  get15_NumForImage() ;
+	public void set15_NumForImage(int  value) ;
 
-	public int  getNumForHtml() ;
-	public void setNumForHtml(int  value) ;
+	public int  get17_NumForHtml() ;
+	public void set17_NumForHtml(int  value) ;
 
-	public int  getisTest() ;
-	public void setisTest(int  value) ;
+	public int  get10_UseCookie() ;
+	public void set10_UseCookie(int  value) ;
 
-	public int  getisSaveByTitle() ;
-	public void setisSaveByTitle(int  value) ;
+	public int  get21_filterflag() ;
+	public void set21_filterflag(int  value) ;
 
-	public int  getUseCookie() ;
-	public void setUseCookie(int  value) ;
+	public int  get08_ThreadNum() ;
+	public void set08_ThreadNum(int  value) ;
 
-	public int  getfilterflag() ;
-	public void setfilterflag(int  value) ;
-
-	public int  getDepth() ;
-	public void setDepth(int  value) ;
-
-	public String  getUrl() ;
-	public void setUrl(String  value) ;
-	
-	public int  getThreadNum() ;
-	public void setThreadNum(int  value) ;
-
-	public int getrunflag() ;
+	public int get99_runflag() ;
 	
 	public String showAllFilterList() ;
 	public String reloadAllFilterList() ;

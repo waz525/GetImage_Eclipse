@@ -1062,11 +1062,11 @@ public class GetImage implements GetImageMBean,Runnable
 	}
 	
 	
-	public int  getThreadNum()
+	public int  get08_ThreadNum()
 	{
 		return this.ThreadNum ;
 	}
-	public synchronized void setThreadNum(int value)
+	public synchronized void set08_ThreadNum(int value)
 	{
 		this.ThreadNum = value ;
 	}
@@ -1085,242 +1085,234 @@ public class GetImage implements GetImageMBean,Runnable
 		}
 		return showAllFilterList() ;
 	}
-	public synchronized int getrunflag() 
+	public synchronized int get99_runflag() 
 	{
 		return this.runflag ;
 	}
 	
-	public String  getUrl()
+	public String  get01_Url()
 	{
 		return this.Url ;
 	}
-	public synchronized void setUrl(String value)
+	public synchronized void set01_Url(String value)
 	{
 		this.Url = value ;
 	}
 	
-	public int  getDepth()
+	public int  get04_Depth()
 	{
 		return this.Depth ;
 	}
-	public synchronized void setDepth(int value)
+	public synchronized void set04_Depth(int value)
 	{
 		this.Depth = value ;
 	}
 	
-	public int  getfilterflag()
+	public int  get21_filterflag()
 	{
 		return this.filterflag ;
 	}
-	public synchronized void setfilterflag(int value)
+	public synchronized void set21_filterflag(int value)
 	{
 		this.filterflag = value ;
 	}
 	
-	public int  getUseCookie()
+	public int  get10_UseCookie()
 	{
 		return this.UseCookie ;
 	}
-	public synchronized void setUseCookie(int value)
+	public synchronized void set10_UseCookie(int value)
 	{
 		this.UseCookie = value ;
 	}
 	
-	public int  getisSaveByTitle()
+	public int  get06_isSaveByTitle()
 	{
 		return this.isSaveByTitle ;
 	}
-	public synchronized void setisSaveByTitle(int value)
+	public synchronized void set06_isSaveByTitle(int value)
 	{
 		this.isSaveByTitle = value ;
 	}
 	
-	public int  getisTest()
+	public int  get03_isTest()
 	{
 		return this.isTest ;
 	}
-	public synchronized void setisTest(int value)
+	public synchronized void set03_isTest(int value)
 	{
 		this.isTest = value ;
 	}
 	
-	public int  getNumForHtml()
+	public int  get17_NumForHtml()
 	{
 		return this.NumForHtml ;
 	}
-	public synchronized void setNumForHtml(int value)
+	public synchronized void set17_NumForHtml(int value)
 	{
 		this.NumForHtml = value ;
 	}
 	
-	public int  getNumForImage()
+	public int  get15_NumForImage()
 	{
 		return this.NumForImage ;
 	}
-	public synchronized void setNumForImage(int value)
+	public synchronized void set15_NumForImage(int value)
 	{
 		this.NumForImage = value ;
 	}
 			
-	public int  getRepeateOperate()
+	public int  get09_RepeateOperate()
 	{
 		return this.RepeateOperate ;
 	}
-	public synchronized void setRepeateOperate(int value)
+	public synchronized void set09_RepeateOperate(int value)
 	{
 		this.RepeateOperate = value ;
 	}
 	
-	public int  getNumForList()
+	public int  get26_NumForList()
 	{
 		return this.NumForList ;
 	}
-	public synchronized void setNumForList(int value)
+	public synchronized void set26_NumForList(int value)
 	{
 		this.NumForList = value ;
 	}
 	
-	public String getdefPostfix()
+	public String get20_defPostfix()
 	{
 		return this.defPostfix ;
 	}
-	public synchronized void setdefPostfix(String str)
+	public synchronized void set20_defPostfix(String str)
 	{
 		this.defPostfix = str ;
 	}
 	
-	public String getimgUrlReplace()
+	public String get19_imgUrlReplace()
 	{
 		return this.imgUrlReplace ;
 	}
-	public synchronized void setimgUrlReplace(String str)
+	public synchronized void set19_imgUrlReplace(String str)
 	{
 		this.imgUrlReplace = str ;
 	}
 	
-	public String getrepeateUrl()
-	{
-		return this.repeateUrl ;
-	}
-	public synchronized void setrepeateUrl(String str)
-	{
-		this.repeateUrl = str ;
-	}
 	
-	public String getTitleSeparator()
+	public String get07_TitleSeparator()
 	{
 		return this.TitleSeparator ;
 	}
-	public synchronized void setTitleSeparator(String str)
+	public synchronized void set07_TitleSeparator(String str)
 	{
 		this.TitleSeparator = str ;
 	}
 	
-	public String getRegForList()
+	public String get25_RegForList()
 	{
 		return this.RegForList ;
 	}
-	public synchronized void setRegForList(String str)
+	public synchronized void set25_RegForList(String str)
 	{
 		this.RegForList = str ;
 	}
 	
-	public String getStrForCookie()
+	public String get13_StrForCookie()
 	{
 		return this.StrForCookie ;
 	}
-	public synchronized void setStrForCookie(String str)
+	public synchronized void set13_StrForCookie(String str)
 	{
 		this.StrForCookie = str ;
 	}
 	
-	public String getUrlForCookie()
+	public String get12_UrlForCookie()
 	{
 		return this.UrlForCookie ;
 	}
-	public synchronized void setUrlForCookie(String str)
+	public synchronized void set12_UrlForCookie(String str)
 	{
 		this.UrlForCookie = str ;
 	}
 	
-	public String getEncodeType()
+	public String get02_EncodeType()
 	{
 		return this.EncodeType ;
 	}
-	public synchronized void setEncodeType(String str)
+	public synchronized void set02_EncodeType(String str)
 	{
 		this.EncodeType = str ;
 	}
 	
-	public String getDirForJpg()
+	public String get05_DirForJpg()
 	{
 		return this.DirForJpg ;
 	}
-	public synchronized void setDirForJpg(String str)
+	public synchronized void set05_DirForJpg(String str)
 	{
 		this.DirForJpg = str ;
 	}
 	
-	public String getFlagForHtml()
+	public String get18_FlagForHtml()
 	{
 		return this.FlagForHtml ;
 	}
-	public synchronized void setFlagForHtml(String str)
+	public synchronized void set18_FlagForHtml(String str)
 	{
 		this.FlagForHtml = str ;
 	}
 	
-	public String getRegForImage()
+	public String get14_RegForImage()
 	{
 		return this.RegForImage ;
 	}
-	public synchronized void setRegForImage(String reg)
+	public synchronized void set14_RegForImage(String reg)
 	{
 		this.RegForImage = reg ;
 	}
 	
-	public String getRegForHtml()
+	public String get16_RegForHtml()
 	{
 		return this.RegForHtml ;
 	}
-	public synchronized void setRegForHtml(String reg)
+	public synchronized void set16_RegForHtml(String reg)
 	{
 		this.RegForHtml = reg ;
 	}
-	public String getCookie()
+	public String get11_Cookie()
 	{
 		return this.Cookie ;
 	}
-	public synchronized void setCookie(String cookie)
+	public synchronized void set11_Cookie(String cookie)
 	{
 		this.Cookie = cookie ;
 	}
 
-	public String getfilterlist()
+	public String get23_filterlist()
 	{
 		return this.filterlist ;
 	}
-	public synchronized void setfilterlist(String list)
+	public synchronized void set23_filterlist(String list)
 	{
 		this.filterlist = list ;
 	}
 
-	public String getfilterfile()
+	public String get22_filterfile()
 	{
 		return this.filterFile ;
 	}
 	
-	public synchronized void setfilterfile(String filename)
+	public synchronized void set22_filterfile(String filename)
 	{
 		this.filterFile = filename ;
 	}
 	
-	public synchronized String getpiclist()
+	public synchronized String get24_piclist()
 	{
 		return this.piclist ;
 	}
 	
-	public void setpiclist(String picList)
+	public void set24_piclist(String picList)
 	{
 		this.piclist = picList ;
 	}
